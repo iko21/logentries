@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using log4net;
 
 
@@ -14,6 +15,7 @@ namespace WebApplication4.Controllers
 
         public ActionResult Index()
         {
+            Login();
             return View();
         }
 
@@ -32,6 +34,12 @@ namespace WebApplication4.Controllers
         }
 
         public ActionResult Register()
+        {
+            return View();
+        }
+
+        [Login]
+        public ActionResult Login()
         {
             return View();
         }
