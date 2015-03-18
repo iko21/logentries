@@ -7,13 +7,12 @@ using log4net;
 
 namespace WebApplication4
 {
-    public class Filter
+    public class Filter:FilterAttribute, IActionFilter, IResultFilter, IExceptionFilter
     {
-        public class FilterExample : FilterAttribute, IActionFilter, IResultFilter, IExceptionFilter
-        {
-            private static ILog log = LogManager.GetLogger(typeof(FilterExample));
+        
+            private static ILog log = LogManager.GetLogger(typeof(Filter));
 
-            public FilterExample()
+            public Filter()
             {
                 log.Debug("FilterExample Usado");
             }
@@ -42,6 +41,6 @@ namespace WebApplication4
             {
                 log.Error("Algo se hizo ma");
             }
-        }
+        
     }
 }
