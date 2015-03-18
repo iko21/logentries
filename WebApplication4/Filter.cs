@@ -11,7 +11,7 @@ namespace WebApplication4
     {
         public class FilterExample : FilterAttribute, IActionFilter, IResultFilter, IExceptionFilter
         {
-            private static ILog log = LogManager.GetLogger(typeof(FilterExample));
+            private static readonly ILog log = LogManager.GetLogger(typeof(FilterExample));
 
             public FilterExample()
             {
@@ -40,7 +40,7 @@ namespace WebApplication4
 
             public void OnException(ExceptionContext filterContext)
             {
-                log.Error("Algo salio mal. Culpo a Don Julio.");
+                log.Error("Algo se hizo mal");
             }
         }
     }
